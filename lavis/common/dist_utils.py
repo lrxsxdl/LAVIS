@@ -127,7 +127,7 @@ def download_cached_file(url, check_hash=True, progress=False):
         cached_file = os.path.join(timm_hub.get_cache_dir(), filename)
 
         return cached_file
-
+    # /root/.cache/torch/hub/checkpoints/eva_vit_g.pth
     if is_main_process():
         timm_hub.download_cached_file(url, check_hash, progress)
 

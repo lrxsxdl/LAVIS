@@ -77,7 +77,7 @@ class Blip2T5(Blip2Base):
         for layer in self.Qformer.bert.encoder.layer:
             layer.output = None
             layer.intermediate = None
-
+        t5_model = '../pretrain_clip/flan-t5-xxl'
         self.t5_tokenizer = T5TokenizerFast.from_pretrained(t5_model)
         t5_config = T5Config.from_pretrained(t5_model)
         t5_config.dense_act_fn = "gelu"
